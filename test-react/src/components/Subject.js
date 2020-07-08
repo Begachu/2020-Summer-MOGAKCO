@@ -5,8 +5,12 @@ class Subject extends Component {
       //return에서는 하나의 최상위 tag만 사용
       return (
         <header>
-              <h1>WEB</h1>
-              world wide web!
+              <h1><a href="/" onClick={function(e){
+                e.preventDefault();
+                this.props.onChangePage();
+              }.bind(this)
+                }>{this.props.title}</a></h1>
+              {this.props.sub}
           </header>
       );
     }
